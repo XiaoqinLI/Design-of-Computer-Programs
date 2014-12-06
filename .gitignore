@@ -1,0 +1,7 @@
+.DS_Store
+*.pyc
+testtest.py
+.pyc
+.py~
+.metadata
+.idea
