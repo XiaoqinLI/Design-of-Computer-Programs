@@ -32,10 +32,19 @@ def replacements(card):
     elif card == "?B": return blackCards
     else: return [card]
 
+
 def best_wild_hand(hand):
     "Try all values for jokers in all 5-card selections."
+    # my first solution:
+    # allCardsList = []
+    # for card in hand:
+    #     allCardsList.append(replacements(card))
+    # hands = set(best_hand(handWithWildCard) for handWithWildCard in itertools.product(*allCardsList)) # unpack the iterable
+
+    # more elegant solution:
     hands = set(best_hand(handWithWildCard) for handWithWildCard in itertools.product(*map(replacements,hand))) # unpack the iterable
     return max(hands, key=hand_rank)
+
 
 def best_hand(hand):
     return max(itertools.combinations(hand, 5), key = hand_rank)
