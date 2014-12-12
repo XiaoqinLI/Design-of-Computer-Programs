@@ -18,8 +18,6 @@ def compile_formula(formula, verbose=False):
     lambda Y, M, E, U, O: Y!=0 and M!=0 and ((1*U+10*O+100*Y) == (1*E+10*M)**2)
     """
 
-    # modify the code in this function.
-
     letters = ''.join(set(re.findall('[A-Z]', formula)))
     firstLetters = set(re.findall(r'\b([A-Z])[A-Z]', formula))
     parms = ', '.join(letters)
